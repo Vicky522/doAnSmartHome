@@ -1,5 +1,12 @@
 import React, { Component } from "react";
-import styleHeader from "./Header.module.css";
+import "./Header.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
 
 export default class Header extends Component {
   render() {
@@ -26,24 +33,36 @@ export default class Header extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse " id="collapsibleNavId">
-            <ul
-              className="navbar-nav mr-auto mt-2 mt-lg-0 "
-              id={`${styleHeader["headerNav"]}`}
-            >
+            <ul className="navbar-nav mr-auto mt-2 mt-lg-0 " id="headerNav">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <NavLink
+                  activeStyle={{ color: "#FC77DC" }}
+                  exact
+                  className="nav-link"
+                  to="/"
+                >
                   DASH BOARD <span className="sr-only">(current)</span>
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <NavLink
+                  className="nav-link"
+                  to="/item"
+                  activeStyle={{ color: "#FC77DC" }}
+                  exact
+                >
                   ITEM
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item ">
-                <a className="nav-link " href="#">
+                <NavLink
+                  className="nav-link "
+                  to="/about"
+                  activeStyle={{ color: "#FC77DC" }}
+                  exacts
+                >
                   ABOUT US
-                </a>
+                </NavLink>
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
@@ -62,19 +81,19 @@ export default class Header extends Component {
           </div>
 
           {/* nav second */}
-          <div className={`${styleHeader["btn-navSecond"]}`}>
-            <button className={`btn mx-5 text-white `}>
+          <div className="btn-navSecond">
+            <button className="btn mx-5 text-white ">
               <i class="fas fa-stream"></i>
             </button>
-            <div className={`${styleHeader["navSecond"]}`}>
-              <button className={`btn rounded-0 text-white bg-dark w-100 p-3`}>
+            <div className="navSecond">
+              <button className="btn rounded-0 text-white bg-dark w-100 p-3`">
                 <i class="fas fa-stream"></i>
               </button>
-              <div className={`${styleHeader["navSecond__info"]} pt-2`}>
-                <ul class={`nav justify-content-center `}>
+              <div className="navSecond__info pt-2">
+                <ul class="nav justify-content-center">
                   <li class="nav-item">
                     <a class="nav-link text-white" href="#">
-                      <i class="fab fa-facebook-messenger "></i>
+                      <i class="fab fa-facebook-messenger text-white"></i>
                     </a>
                   </li>
                   <li class="nav-item">
@@ -103,6 +122,9 @@ export default class Header extends Component {
             </div>
           </div>
         </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
       </div>
     );
   }

@@ -5,6 +5,7 @@
 
 .navbar{
     justify-content: space-around;
+    background-color: #0C1586;
 }
 
 #headerNav{
@@ -27,7 +28,7 @@
 }
 
 #headerNav li:hover a{
-    color: #0C1588;
+    color: #FC77DC;
 
 }
 
@@ -63,11 +64,13 @@
 
     background: linear-gradient(to bottom, #EF8CE2, #E42DC1);
     background-size: cover;
+    
 
 }
 
 .navSecond__info a{
     font-size: 25px;
+    transition: all .5s;
 }
 
 .navSecond__info li:hover a i{
